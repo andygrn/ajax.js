@@ -53,6 +53,7 @@
 
     var xml = new XMLHttpRequest();
     xml.open(options.type, options.url, true);
+    xml.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     var timeoutLength = options.timeout;
     var requestDone = false;
