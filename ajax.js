@@ -20,7 +20,9 @@
  *  });
  */
 
-(function() {
+(function( global ) {
+
+  'use strict';
 
   var ajax, serialize;
 
@@ -107,6 +109,6 @@
     }
   };
 
-  this.ajax = ajax;
+  global.ajax = ajax;
 
-})();
+})( window );
