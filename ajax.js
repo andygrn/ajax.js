@@ -48,12 +48,15 @@
       onSuccess: options.onSuccess || function(){},
       onComplete: options.onComplete || function(){},
       onError: options.onError || function(){},
-      data: options.data || null
+      data: options.data || null,
+      headers: options.headers || []
     };
 
     var xml = new XMLHttpRequest();
     xml.open(options.type, options.url, true);
     xml.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    for (var i=0; i < options.headers.length; i++)
+      xml.setRequestHeader( options.headers[i][0], options.headers[i][1] );
 
     var timeoutLength = options.timeout;
     var requestDone = false;
