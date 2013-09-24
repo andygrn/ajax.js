@@ -20,6 +20,10 @@ immediately feel at home.
       url: 'http://example.com',
       data: {name: 'John Smith'},
       timeout: 5000,
+      headers: [
+        ['X-Custom-Header', 'Header-Content'],
+        ['X-Custom-Header-2', 'Header-Content']
+      ],
       onSuccess: function(data) {
         console.log('Here is the data: ' + data);
       },
